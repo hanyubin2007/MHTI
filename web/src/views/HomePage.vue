@@ -24,15 +24,16 @@ import EmptyState from '@/components/common/EmptyState.vue'
 import AnimatedNumber from '@/components/common/AnimatedNumber.vue'
 import RingChart from '@/components/common/RingChart.vue'
 import BarChart from '@/components/common/BarChart.vue'
+import TmdbSetupBanner from '@/components/common/TmdbSetupBanner.vue'
 
 const router = useRouter()
 const { loading, totalTasks, successCount, failedCount, recentTasks, weeklyStats } = useHomeStats()
 
 // iOS 风格统计卡片配置
 const statCards = [
-  { key: 'total', label: '总任务数', icon: TrendingUpOutline, color: '#007AFF', bgColor: 'rgba(0, 122, 255, 0.1)' },
-  { key: 'success', label: '成功', icon: CheckmarkCircleOutline, color: '#34C759', bgColor: 'rgba(52, 199, 89, 0.1)' },
-  { key: 'failed', label: '失败', icon: CloseCircleOutline, color: '#FF3B30', bgColor: 'rgba(255, 59, 48, 0.1)' },
+  { key: 'total', label: '总任务数', icon: TrendingUpOutline, color: '#007AFF', bgColor: 'rgba(0, 122, 255, 0.1)', path: '/history' },
+  { key: 'success', label: '成功', icon: CheckmarkCircleOutline, color: '#34C759', bgColor: 'rgba(52, 199, 89, 0.1)', path: '/history?status=success' },
+  { key: 'failed', label: '失败', icon: CloseCircleOutline, color: '#FF3B30', bgColor: 'rgba(255, 59, 48, 0.1)', path: '/history?status=failed' },
 ]
 
 // iOS 风格快捷入口配置
@@ -98,10 +99,18 @@ const goToDetail = (record: HistoryRecord) => {
 
     <!-- 实际内容 -->
     <template v-else>
+      <!-- TMDB 配置提示 -->
+      <TmdbSetupBanner />
+
       <!-- 统计卡片 -->
       <NGrid :x-gap="16" :y-gap="16" cols="1 s:2 m:3" responsive="screen">
         <NGi v-for="(stat, index) in statCards" :key="stat.key">
-          <NCard class="stat-card ios-card" :style="{ '--delay': `${index * 0.08}s` }">
+          <NCard
+            class="stat-card ios-card"
+            :style="{ '--delay': `${index * 0.08}s` }"
+            hoverable
+            @click="goTo(stat.path)"
+          >
             <div class="stat-content">
               <div class="stat-icon" :style="{ background: stat.bgColor }">
                 <NIcon :component="stat.icon" :size="26" :color="stat.color" />
@@ -228,11 +237,16 @@ const goToDetail = (record: HistoryRecord) => {
 /* 统计卡片 */
 .stat-card {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
 }
 
 .stat-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--ios-shadow-md);
+}
+
+.stat-card:active {
+  transform: translateY(-2px) scale(0.99);
 }
 
 .stat-content {

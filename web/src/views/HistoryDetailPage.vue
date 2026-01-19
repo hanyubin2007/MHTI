@@ -599,14 +599,10 @@ onUnmounted(() => {
 /* 毛玻璃卡片 */
 .glass-card {
   border: none;
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--ios-glass-bg-thick);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   margin-bottom: 16px;
-}
-
-:global(.dark) .glass-card {
-  background: rgba(30, 41, 59, 0.8);
 }
 
 /* 主卡片 */

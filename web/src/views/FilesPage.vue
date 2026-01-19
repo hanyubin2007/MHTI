@@ -388,13 +388,9 @@ loadDirectory(initPath.value, initPage.value)
 /* 毛玻璃卡片 */
 .glass-card {
   border: none;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--ios-glass-bg-thick);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-}
-
-:global(.dark) .glass-card {
-  background: rgba(30, 41, 59, 0.7);
 }
 
 /* 页面标题 */

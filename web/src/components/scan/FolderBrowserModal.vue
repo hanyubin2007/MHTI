@@ -227,14 +227,10 @@ watch(
   width: 600px;
   max-width: 95vw;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--ios-glass-bg-thick);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-}
-
-:global(.dark) .browser-modal {
-  background: rgba(30, 41, 59, 0.95);
 }
 
 .header-title {

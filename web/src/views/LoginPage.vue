@@ -232,7 +232,7 @@ const expireOptions = expireOptionsData.map((opt) => ({
 }
 
 .login-page--dark .login-card {
-  background: rgba(30, 41, 59, 0.95);
+  background: var(--ios-bg-secondary);
   box-shadow:
     0 25px 50px -12px rgba(0, 0, 0, 0.5),
     0 0 0 1px rgba(255, 255, 255, 0.05);

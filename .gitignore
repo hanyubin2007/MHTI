@@ -133,6 +133,17 @@ logs/
 .serena/
 .spec-workflow/
 
+# AI 上下文文档
+CLAUDE.md
+**/CLAUDE.md
+.claude/
+ARCHITECTURE.md
+**/ARCHITECTURE.md
+docs/
+
+# BMad 敏捷工作流文档
+.bmad/
+
 # -----------------------------------
 # Docker（可选忽略本地覆盖）
 # -----------------------------------

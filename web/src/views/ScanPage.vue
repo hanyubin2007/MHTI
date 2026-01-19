@@ -25,7 +25,8 @@ import {
 import { manualJobApi } from '@/api/manual-job'
 import type { ManualJob, ManualJobStatus } from '@/api/types'
 import { LinkMode } from '@/api/types'
-import ManualJobCreateModal from '@/components/scan/ManualJobCreateModal.vue'
+import TaskWizard from '@/components/scan/TaskWizard.vue'
+import ProgressCell from '@/components/scan/ProgressCell.vue'
 import EmptyState from '@/components/common/EmptyState.vue'
 
 const router = useRouter()
@@ -129,15 +130,13 @@ const columns: DataTableColumns<ManualJob> = [
   {
     title: '进度',
     key: 'progress',
-    width: 200,
+    width: 180,
     render: (row) =>
-      h(NSpace, { size: 4 }, {
-        default: () => [
-          h(NTag, { type: 'success', size: 'small' }, { default: () => `成功: ${row.success_count}` }),
-          h(NTag, { type: 'default', size: 'small' }, { default: () => `跳过: ${row.skip_count}` }),
-          h(NTag, { type: 'error', size: 'small' }, { default: () => `错误: ${row.error_count}` }),
-          h(NTag, { type: 'info', size: 'small' }, { default: () => `总数: ${row.total_count}` }),
-        ],
+      h(ProgressCell, {
+        successCount: row.success_count,
+        skipCount: row.skip_count,
+        errorCount: row.error_count,
+        totalCount: row.total_count,
       }),
   },
   {
@@ -332,8 +331,8 @@ onUnmounted(() => {
       </div>
     </NCard>
 
-    <!-- 创建任务弹窗 -->
-    <ManualJobCreateModal
+    <!-- 创建任务向导 -->
+    <TaskWizard
       v-model:show="showCreateModal"
       @success="handleCreateSuccess"
     />
@@ -349,13 +348,9 @@ onUnmounted(() => {
 /* 毛玻璃卡片 */
 .glass-card {
   border: none;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--ios-glass-bg-thick);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-}
-
-:global(.dark) .glass-card {
-  background: rgba(30, 41, 59, 0.7);
 }
 
 /* 工具栏 */
